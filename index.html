@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube Proxy Viewer</title>
+</head>
+<body>
 
+  <h1>YouTube Proxy Viewer</h1>
+
+  <input id="videoId" placeholder="Enter YouTube Video ID" />
+  <button onclick="loadVideo()">Load</button>
+
+  <div id="player"></div>
+
+  <script>
+    function loadVideo() {
+      const id = document.getElementById('videoId').value.trim();
+
+      const proxyBase = 'https://YOUR_PROXY_DOMAIN.com/youtube/embed/';
+
+      document.getElementById('player').innerHTML = `
+        <iframe
+          width="960"
+          height="540"
+          src="${proxyBase}${id}"
+          allowfullscreen>
+        </iframe>
+      `;
+    }
+  </script>
+
+</body>
+</html>
